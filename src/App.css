@@ -59,10 +59,10 @@ body {
   color: #fef9d7;
   filter: drop-shadow(2px 2px 3px #333339);
 }
-.Weather .weather-icon canvas {
+.Weather .main-icon canvas {
   float: right;
   position: relative;
-  left: 80px;
+  left: 50px;
   color: #fef9d7;
   filter: drop-shadow(2px 2px 3px #333339);
 }
