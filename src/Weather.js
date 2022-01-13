@@ -10,7 +10,7 @@ export default function Weather (){
                <input 
                 type="text" 
                 placeholder="Enter a city..."
-                className="form-search"
+                className="search-input"
                 autoComplete="off"
                 />  
          </form>
@@ -25,7 +25,7 @@ export default function Weather (){
     <img
     src="img"
     className="main-icon"
-    alt="current weather icon"/>
+    alt="weather icon 1"/>
 </div>
 <h1>
     <span className="temp-value">--</span>
@@ -62,12 +62,11 @@ export default function Weather (){
         <div className="col"></div>
     </div>
 <div className="row">
-
     <div className="col">
         <img
     src="img"
     className="main-icon"
-    alt="current weather icon"/>
+    alt="weather icon 2"/>
     </div>
 </div>
 <div className="row">
@@ -86,7 +85,7 @@ export default function Weather (){
 <img
     src="img"
     className="main-icon"
-    alt="current weather icon"/>
+    alt="weather icon 3"/>
                 
             </div>
         </div>
