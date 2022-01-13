@@ -71,9 +71,9 @@ export default function Weather(props) {
             </button>
           </div>
         </div> 
-        <WeatherInfo data={weatherData} unit={unit} setUnit={setUnit}/>
+        <WeatherDetails data={weatherData} unit={unit} setUnit={setUnit}/>
       <div>
-       <WeatherForecast unit={unit} setUnit={setUnit} city={weatherData.city} latitude={weatherData.latitude} longitude={weatherData.longitude}/>
+       <Forecast unit={unit} setUnit={setUnit} city={weatherData.city} latitude={weatherData.latitude} longitude={weatherData.longitude}/>
       </div>
       </div>
     );
