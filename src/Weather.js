@@ -1,5 +1,5 @@
 import React from "react";
-import "./Weather.css";
+import "./App.css";
 
 export default function Weather (){
     return(
@@ -15,7 +15,7 @@ export default function Weather (){
                 />  
          </form>
          <button className="magnifying-glass col-3">
-             <i className=" fas fa-search-location"/>
+             <i className="fas fa-search-location"/>
          </button>
             </div>
             </div>  

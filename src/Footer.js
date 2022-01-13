@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 
 export default function Footer(){
 
@@ -12,6 +13,5 @@ Coded by <a href="https://www.instagram.com/_andreacodes/" target="_blank">  And
         </a>
 </div> 
         
-
     )
 }
