@@ -1,7 +1,85 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
+import WeatherDetails from "./WeatherDetails";
+import Forecast from "./Forecast";
 import "./App.css";
 
-export default function Weather (){
+export default function Weather(props) {
+  const [weatherData, setWeatherData]= useState({ready:false});
+  const [city,setCity]=useState(props.defaultCity);
+  const [unit,setUnit] = useState("celsius");
+  
+  function handleResponse(response){
+    console.log(response.data);
+    setWeatherData({
+      ready:true,
+      date: new Date(response.data.dt * 1000),
+      temperature: Math.round(response.data.main.temp),
+      tempMax: Math.round(response.data.main.temp_max),
+      tempMin: Math.round(response.data.main.temp_min),
+      feelsLike: Math.round(response.data.main.feels_like),
+      humidity:response.data.main.humidity,
+      wind:response.data.wind.speed,
+      city:response.data.name,
+      icon:response.data.weather[0].icon,
+      latitude:response.data.coord.lat,
+      longitude:response.data.coord.lon
+    });
+  }
+  function showCurrentPosition(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    const apiKey =`cbac4526bdb23912f197d795becdbdc7`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function searchLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(showCurrentPosition);
+  }
+  function search(){
+    const apiKey =`cbac4526bdb23912f197d795becdbdc7`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function handleSubmit(event){
+  event.preventDefault();
+    search();
+    if(handleResponse){
+      setCity(event.target.reset());
+    }
+    }
+  function handleCityChange(event){
+    setCity(event.target.value);
+  }
+  if (weatherData.ready){
+    return (
+      <div className="Weather">
+        <div className="searchForm">
+          <div className="row">
+            <form className="col-6" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Search city..."
+                className="search-holder"
+                autoComplete="off"
+                onChange={handleCityChange}
+              />
+            </form>
+            <button className="magnifying-glass col-3" onClick={searchLocation}>
+              <i className="fas fa-search-location" />
+            </button>
+          </div>
+        </div> 
+        <WeatherInfo data={weatherData} unit={unit} setUnit={setUnit}/>
+      <div>
+       <WeatherForecast unit={unit} setUnit={setUnit} city={weatherData.city} latitude={weatherData.latitude} longitude={weatherData.longitude}/>
+      </div>
+      </div>
+    );
+  } else{  
+    search();
+
     return(
         <div className="Weather">
             <div className="search-form">
@@ -97,7 +175,7 @@ export default function Weather (){
       </div>
     );
   }
-
+}
 
     
                  
