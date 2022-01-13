@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
-import WeatherDetails from "./WeatherDetails";
-import Forecast from "./Forecast";
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import "./App.css";
 
 export default function Weather(props) {
@@ -71,9 +71,9 @@ export default function Weather(props) {
             </button>
           </div>
         </div> 
-        <WeatherDetails data={weatherData} unit={unit} setUnit={setUnit}/>
+        <WeatherInfo data={weatherData} unit={unit} setUnit={setUnit}/>
       <div>
-       <Forecast unit={unit} setUnit={setUnit} city={weatherData.city} latitude={weatherData.latitude} longitude={weatherData.longitude}/>
+       <WeatherForecast unit={unit} setUnit={setUnit} city={weatherData.city} latitude={weatherData.latitude} longitude={weatherData.longitude}/>
       </div>
       </div>
     );
