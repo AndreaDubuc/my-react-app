@@ -51,15 +51,15 @@ body {
 .Weather .current-weather {
   padding: 30px;
 }
-.Weather .main-icon {
-  width:75px;
+.Weather .Weather-icon {
+  width:50px;
   float: right;
   position: relative;
   left: 80px;
   color: #fef9d7;
   filter: drop-shadow(2px 2px 3px #333339);
 }
-.Weather .main-icon canvas {
+.Weather .Weather-icon canvas {
   float: right;
   position: relative;
   left: 50px;
@@ -67,7 +67,7 @@ body {
   filter: drop-shadow(2px 2px 3px #333339);
 }
 .Weather h1 {
-  font-size: 120px;
+  font-size: 100px;
   text-align: center;
   position: relative;
   left: 10px;
@@ -140,15 +140,15 @@ body {
 
 
 .Weather .unknown-icon {
-  width: 50px;
+  width: 70px;
   text-align: center;
   color: #ffffff;
   opacity: 1;
   filter: drop-shadow(2px 2px 3px #333339);
 }
-.Forecast canvas{
+.WeatherForecast canvas{
   width: 30px;
-  text-align: center;
+  text-align: left;
   color: #ffffff;
   opacity: 1;
   filter: drop-shadow(1px 1px 2px #000000);
@@ -174,13 +174,7 @@ body {
   padding: 5px 10px;
   text-align: center;
 }
-.WeatherForecast .temp-week-days {
-  background-color: rgba(227, 231, 234, 0.7);
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px #7f8389;
-  padding: 5px 10px;
-  text-align: center;
-}
+
 .WeatherForecast .temp-week-days .col{
   line-height: 18px;
 }
@@ -212,7 +206,7 @@ Footer {
     position: relative;
     top: -20px;
   }
-  .Weather .Weather-icon canvas{
+  .Weather .weather-icon canvas{
     width: 50px;
     float: right;
     position: relative;
