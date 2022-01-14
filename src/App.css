@@ -12,7 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: pink;
+  background-color:#000;
 }
 .Container {
   display: flex;
@@ -192,11 +192,7 @@ Footer {
   position: relative;
   top: 30px;
 }
-Footer a {
-  color:#92CACB;
-  font-weight: bold;
-  text-decoration: none;
-}
+
 @media (max-width:450px ) and (min-width:360px){
   .Container{
     max-height: 800px; 
@@ -216,7 +212,7 @@ Footer a {
     position: relative;
     top: -20px;
   }
-  .Weather .weather-icon canvas{
+  .Weather .Weather-icon canvas{
     width: 50px;
     float: right;
     position: relative;

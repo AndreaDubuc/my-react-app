@@ -29,7 +29,7 @@ export default function Weather(props) {
   function showCurrentPosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
-    const apiKey =`cbac4526bdb23912f197d795becdbdc7`;
+    const apiKey =`775e9c304f4c99854ae283105fb24c72`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(handleResponse);
   }
@@ -38,7 +38,7 @@ export default function Weather(props) {
     navigator.geolocation.getCurrentPosition(showCurrentPosition);
   }
   function search(){
-    const apiKey =`cbac4526bdb23912f197d795becdbdc7`;
+    const apiKey =`775e9c304f4c99854ae283105fb24c72`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(handleResponse);
   }
@@ -134,7 +134,7 @@ export default function Weather(props) {
 <div className="col">Wind</div>
 </div>
 </div>
-<div className="temp-hours row">
+
 <div className="col">
     <div className="row">
         <div className="col"></div>
@@ -151,7 +151,7 @@ export default function Weather(props) {
 <div className="col deg-hour"> <strong></strong></div>
 </div>
 </div>
-</div>
+
 
 <div className="temp-week-days row">
     <div className="col">
