@@ -7,16 +7,16 @@ const [unit, setUnit]= useState("celsius");
 
     function showFahrenheit(event){
         event.preventDefault();
-        props.setUnit("fahrenheit");
+        setUnit("fahrenheit");
     }
     function showCelsius(event){
     event.preventDefault();
-    props.setUnit("celsius");
+    setUnit("celsius");
     }
     function fahrenheit(){
         return (props.celsius * 9) / 5 + 32;
     }
-    if (props.unit === "celsius"){
+    if (unit === "celsius"){
         return(   
             <div className="CurrentWeather">
                 <h1>

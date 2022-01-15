@@ -40,6 +40,7 @@ export default function WeatherApp(props) {
   }
 
 function search(){
+  console.log('WeatherApp.js')
     const apiKey =`775e9c304f4c99854ae283105fb24c72`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(handleResponse);
@@ -76,7 +77,7 @@ function search(){
             <hr />
 <WeatherInfo data={weatherData}/> 
 <br/> 
-<WeatherForecast city={weatherData.city} /> 
+<WeatherForecast city={weatherData.city} longitude={weatherData.longitude} latitude={weatherData.latitude} /> 
 </div>
 <small className="small">
 Coded by <a href="https://www.instagram.com/_andreacodes/" target="_blank" rel="noreferrer"> Andrea Dubuc </a> and is open source on {" "}

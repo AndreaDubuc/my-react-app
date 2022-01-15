@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import App from './App';
+import WeatherApp from './WeatherApp';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <WeatherApp defaultCity='Tokyo'/>
+      </React.StrictMode>,
   document.getElementById('root')
 );
 
