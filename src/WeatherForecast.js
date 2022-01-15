@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
-import ForecastPreview from "./ForecastPreview.js";
+import ForecastInfo from "./ForecastInfo.js";
 import "./WeatherForecast.css";
 
 export default function WeatherForecast(props){
@@ -15,12 +15,19 @@ export default function WeatherForecast(props){
     if (loaded && props.latitude === forecast.lat && props.longitude === forecast.lon){
         return (
             
-                <div className ="temp-week-days row">
-                    {forecast.daily.slice(1,5).map(function(DailyForecastItem){
-                        return(
-                            <DailyForecast dataDay={DailyForecastItem} unit={props.unit} setUnit={props.setUnit}/> );   
-                    })} 
-                </div>
+                <div className ="WeatherForecast">
+                    <h3>Hourly</h3>
+                    <hr />
+
+                    <div className="weather-forecast row">
+<ForecastInfo data={forecast.list[0]} />
+          <ForecastInfo data={forecast.list[1]} />
+          <ForecastInfo data={forecast.list[2]} />
+          <ForecastInfo data={forecast.list[3]} />
+          <ForecastInfo data={forecast.list[4]} />
+          <ForecastInfo data={forecast.list[5]} />
+        </div>
+      </div>
             
      );
     }else{
