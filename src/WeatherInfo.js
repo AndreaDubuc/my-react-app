@@ -1,27 +1,66 @@
 import React from "react";
-import DateTime from "./CurrentTime";
-import WeatherIcon from "./WeatherIcon";
-import WeatherTemperature from "./CurrentWeather";
-import WeatherDescription from "./WeatherDescription";
+import CurrentWeather from "./CurrentWeather";
+import "./WeatherInfo.css";
 
 export default function WeatherInfo(props){
-    return (
-        <div className="WeatherInfo">
-            <div className="DateTime">
-                <DateTime currentDate={props.data.date} />
-            </div>
-            <div className="current-weather">
-                <div className="row weather-icon">
-                    <WeatherIcon code={props.data.icon}/>
-                </div>
-                <WeatherTemperature celsius={props.data.temperature} unit={props.unit} setUnit={props.setUnit}/>
-                <div className= "row">
-                    <h2 className="location text-uppercase">{props.data.city}</h2>
-                </div> 
-            </div> 
-            <div className="weather-description">
-                <WeatherDescription unit={props.unit} setUnit={props.setUnit} tempMax={props.data.tempMax} tempMin={props.data.tempMin} feelsLike={props.data.feelsLike} humidity={props.data.humidity} wind={props.data.wind}/>
-            </div>
+     let now = new Date();
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let day = days[now.getDay()];
+  let date = now.getDate();
+  let month = months[now.getMonth()];
+  return (
+    <div className="WeatherInfo">
+      <h2 id="city">{props.data.city}</h2>
+      <h3 id="date">
+        {day} — {date} {month}
+      </h3>
+      <CurrentWeather celsius={props.data.temperature} />
+      <div className="row descriptions">
+        <div className="col-6">
+          <h3 id="description">{props.data.description}</h3>
         </div>
-    );
+        <div className="col-6">
+          <h3 id="max_min">
+            {props.data.min}° — {props.data.max}°
+          </h3>
+        </div>
+      </div>
+      <br />
+      <div className="row details" id="detail">
+        <div className="col-6" id="wind">
+          <h4>
+            <strong>Wind:</strong> {props.data.wind} km/h
+          </h4>
+        </div>
+        <div className="col-6" id="humidity">
+          <h4>
+            <strong>Humidity:</strong> {props.data.humidity}%
+          </h4>
+        </div>
+      </div>
+    </div>
+  );
 }
