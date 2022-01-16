@@ -37,14 +37,14 @@ export default function WeatherInfo(props){
       <h3 id="date">
         {day} — {date} {month}
       </h3>
-      <CurrentWeather celsius={props.data.temperature} />
+      <CurrentWeather data={props.data} celsius={props.data.temperature} />
       <div className="row descriptions">
         <div className="col-6">
           <h3 id="description">{props.data.description}</h3>
         </div>
         <div className="col-6">
           <h3 id="max_min">
-            {props.data.min}° — {props.data.max}°
+            {props.data.min}°/{props.data.max}°
           </h3>
         </div>
       </div>

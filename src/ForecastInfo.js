@@ -16,7 +16,6 @@ export default function ForecastInfo(props) {
     let date = new Date(props.data.dt * 1000);
 
     let day = date.getDay();
-    console.log(day)
     return `${days[day]}`;
   }
 
@@ -25,11 +24,11 @@ export default function ForecastInfo(props) {
 
     return `${temperature}°C`;
   }
-
+console.log(props.data)
   return (
-    <div className="ForecastInfo col-2">
+    <div className="ForecastInfo d-flex flex-column col-2">
       {days()}
-      <WeatherIcon code={props.data.weather[0].icon} />
+      <WeatherIcon code={props.data.weather[0]} />
       {temperature()}
     </div>
   );

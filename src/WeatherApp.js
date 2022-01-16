@@ -8,7 +8,6 @@ import axios from "axios";
 export default function WeatherApp(props) {
   const [weatherData, setWeatherData]= useState({ready:false});
   const [city,setCity]=useState(props.defaultCity);
-  const [unit,setUnit] = useState("celsius");
   function handleResponse(response){
     setWeatherData({
       ready:true,
@@ -21,14 +20,15 @@ export default function WeatherApp(props) {
       city:response.data.name,
       icon:response.data.weather[0].icon,
       latitude:response.data.coord.lat,
-      longitude:response.data.coord.lon
+      longitude:response.data.coord.lon,
+      description:response.data.weather[0].description
     });
   }
 
  function handleSubmit(event){
   event.preventDefault();
     search();
-    if(handleResponse){
+    if(weatherData){
       setCity(event.target.reset());
     }
 
@@ -39,7 +39,6 @@ export default function WeatherApp(props) {
   }
 
 function search(){
-  console.log('WeatherApp.js');
     const apiKey =`775e9c304f4c99854ae283105fb24c72`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(handleResponse);

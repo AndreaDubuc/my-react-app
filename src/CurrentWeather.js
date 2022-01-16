@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 
 import "./CurrentWeather.css";
+import WeatherIcon from "./WeatherIcon";
 
 export default function CurrentWeather(props){
 const [unit, setUnit]= useState("celsius");
@@ -16,12 +17,14 @@ const [unit, setUnit]= useState("celsius");
     function fahrenheit(){
         return (props.celsius * 9) / 5 + 32;
     }
+  console.log(props.data)
     if (unit === "celsius"){
         return(   
             <div className="CurrentWeather d-flex justify-content-center">
                 <h1>
                     <span id="temperature">{Math.round(props.celsius)}</span>
-        </h1>
+                </h1>
+               
         <div className="units my-auto">
           <span className="C" id="celsius-link">
             °C
@@ -32,6 +35,9 @@ const [unit, setUnit]= useState("celsius");
               °F
             </a>
           </span>
+        </div>
+        <div>
+          <WeatherIcon code={props.data}/>
         </div>
       </div>
     );
