@@ -7,22 +7,22 @@ const [unit, setUnit]= useState("celsius");
 
     function showFahrenheit(event){
         event.preventDefault();
-        props.setUnit("fahrenheit");
+        setUnit("fahrenheit");
     }
     function showCelsius(event){
     event.preventDefault();
-    props.setUnit("celsius");
+    setUnit("celsius");
     }
     function fahrenheit(){
         return (props.celsius * 9) / 5 + 32;
     }
-    if (props.unit === "celsius"){
+    if (unit === "celsius"){
         return(   
-            <div className="CurrentWeather">
+            <div className="CurrentWeather d-flex justify-content-center">
                 <h1>
                     <span id="temperature">{Math.round(props.celsius)}</span>
         </h1>
-        <div className="units">
+        <div className="units my-auto">
           <span className="C" id="celsius-link">
             °C
           </span>{" "}
@@ -37,11 +37,11 @@ const [unit, setUnit]= useState("celsius");
     );
   } else {
     return (
-      <div className="CurrentWeather">
+      <div className="CurrentWeather d-flex justify-content-center">
         <h1>
           <span id="temperature">{Math.round(fahrenheit())}</span>
         </h1>
-        <div className="units">
+        <div className="units my-auto">
           <span className="C" id="celsius-link">
             <a href="/" onClick={showCelsius}>
               °C
