@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import CurrentTime from "./CurrentTime";
 import WeatherForecast from "./WeatherForecast";
 import WeatherInfo from "./WeatherInfo";
@@ -9,7 +9,6 @@ export default function WeatherApp(props) {
   const [weatherData, setWeatherData]= useState({ready:false});
   const [city,setCity]=useState(props.defaultCity);
   const [unit,setUnit] = useState("celsius");
-  
   function handleResponse(response){
     setWeatherData({
       ready:true,
@@ -40,7 +39,7 @@ export default function WeatherApp(props) {
   }
 
 function search(){
-  console.log('WeatherApp.js')
+  console.log('WeatherApp.js');
     const apiKey =`775e9c304f4c99854ae283105fb24c72`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(handleResponse);
@@ -77,7 +76,7 @@ function search(){
             <hr />
 <WeatherInfo data={weatherData}/> 
 <br/> 
-<WeatherForecast city={weatherData.city} longitude={weatherData.longitude} latitude={weatherData.latitude} /> 
+<WeatherForecast  city={weatherData.city} defaultCity={props.defaultCity} lat = {weatherData.latitude} lon={weatherData.longitude}/> 
 </div>
 <small className="small">
 Coded by <a href="https://www.instagram.com/_andreacodes/" target="_blank" rel="noreferrer"> Andrea Dubuc </a> and is open source on {" "}
@@ -96,6 +95,7 @@ Coded by <a href="https://www.instagram.com/_andreacodes/" target="_blank" rel="
     );
   } else{  
     search();
+    
 
     return "Loading...";
   }

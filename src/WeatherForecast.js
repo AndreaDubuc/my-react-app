@@ -8,31 +8,31 @@ export default function WeatherForecast(props){
     const [forecast,setForecast]=useState(null);
     
     function handleForecastResponse(response){
-        setForecast(response.data);
+        let forecasts=response.data.daily;
+        //forecasts.splice(5);
+        console.log();
+        setForecast(forecasts.splice(1,6));
         setLoaded(true);
     }
     
-    if (loaded && props.latitude === forecast.lat && props.longitude === forecast.lon){
+    if (forecast){
         return (
             
                 <div className ="WeatherForecast">
-                    <h3>Hourly</h3>
+                    
                     <hr />
-
                     <div className="weather-forecast row">
-<ForecastInfo data={forecast.list[0]} />
-          <ForecastInfo data={forecast.list[1]} />
-          <ForecastInfo data={forecast.list[2]} />
-          <ForecastInfo data={forecast.list[3]} />
-          <ForecastInfo data={forecast.list[4]} />
-          <ForecastInfo data={forecast.list[5]} />
-        </div>
+                       {forecast.map((day)=>{
+                           console.log('test');
+                           return (<ForecastInfo data={day}/>)
+                       })}
+                    </div>
       </div>
             
      );
     }else{
         const apiKey =`775e9c304f4c99854ae283105fb24c72`;
-        let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=current,minutely&appid=${apiKey}&units=metric`
+        let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.lat}&lon=${props.lon}&appid=${apiKey}&units=metric`
         axios.get(url).then(handleForecastResponse);
         return(
             null);
