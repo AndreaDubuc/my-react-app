@@ -24,7 +24,6 @@ export default function ForecastInfo(props) {
 
     return `${temperature}°C`;
   }
-console.log(props.data)
   return (
     <div className="ForecastInfo d-flex flex-column col-2">
       {days()}
