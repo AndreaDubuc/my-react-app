@@ -17,7 +17,7 @@ const [unit, setUnit]= useState("celsius");
     function fahrenheit(){
         return (props.celsius * 9) / 5 + 32;
     }
-  console.log(props.data)
+  
     if (unit === "celsius"){
         return(
           <div className="col">
@@ -49,23 +49,35 @@ const [unit, setUnit]= useState("celsius");
           </div>
     );
   } else {
-    return (
-      <div className="CurrentWeather d-flex justify-content-center">
-        <h1>
-          <span id="temperature">{Math.round(fahrenheit())}</span>
-        </h1>
-        <div className="units my-auto">
+    return(
+          <div className="col">
+            <div className="row">
+              <div className="col d-flex flex-row justify-content-end">
+                      <h1>
+                    <span id="temperature">{Math.round(fahrenheit())}</span>
+                </h1>
+                   
+                  <div className="units my-auto">
           <span className="C" id="celsius-link">
             <a href="/" onClick={showCelsius}>
-              °C
+             °C 
             </a>
           </span>{" "}
           |
           <span className="F" id="fahrenheit-link">
-            °F
+              °F
           </span>
         </div>
-      </div>
+              </div>
+            </div>
+            <div className="row">
+          <div>
+          <WeatherIcon code={props.data}/>
+        </div>
+       
+            </div>
+          </div>
+      
     );
   }
 }

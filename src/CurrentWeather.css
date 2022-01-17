@@ -6,18 +6,20 @@ h1 {
   margin-bottom: -20px;
 }
 
-.units {
- 
+a:link{
+  text-decoration: none;
 }
+
 .C,
 .F {
   transition: all 200ms ease-in-out;
+  
 }
 
 .C:hover,
 .F:hover {
   cursor: pointer;
-  color: rgb(0, 247, 255);
+  color: rgb(255, 0, 212);
   font-weight: 700;
 }
 
