@@ -35,7 +35,7 @@ export default function WeatherInfo(props){
     <div className="WeatherInfo">
       <h2 id="city">{props.data.city}</h2>
       <h3 id="date">
-        {day} — {date} {month}
+        {day}, {month} {date} 
       </h3>
       <CurrentWeather data={props.data} celsius={props.data.temperature} />
       <div className="row descriptions">
