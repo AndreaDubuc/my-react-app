@@ -1,7 +1,7 @@
 import React from "react";
 import "./CurrentTime.css";
 
-export default function CurrentTime(props){
+function CurrentTime(props){
  const now= new Date();
  let hours =now.getHours();
  if (hours < 10){

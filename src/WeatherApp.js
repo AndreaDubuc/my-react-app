@@ -1,5 +1,4 @@
 import React, {useState,useEffect} from "react";
-import CurrentTime from "./CurrentTime";
 import WeatherForecast from "./WeatherForecast";
 import WeatherInfo from "./WeatherInfo";
 import "./WeatherApp.css";
@@ -52,7 +51,7 @@ function search(){
         <div className="container">
         <div className="weather_app_wrapper">
           <div className="weather_app">
-<CurrentTime />
+
 <br />
             <form className="d-flex justify-content-end"
             onSubmit={handleSubmit}
