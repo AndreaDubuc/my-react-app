@@ -54,13 +54,11 @@ function search(){
           <div className="weather_app">
 <CurrentTime />
 <br />
-            <form 
+            <form className="d-flex justify-content-end"
             onSubmit={handleSubmit}
-            className="form-inline d-flex justify-content-center md-form form-sm"
             id="search-form"
             >
               <input
-              className="form-control form-control-sm mr-3 w-75"
                 type="text"
                 placeholder="Search city..."
                 aria-label="Search"
@@ -68,11 +66,12 @@ function search(){
                 id="search_bar"
                 onChange={handleCityChange}
               />
-                <button type="submit" id="search_icon">
+              <button type="submit" className="search_icon">
                   <i className="fas fa-search"></i>
                 </button>
             </form>
-            <hr />
+            
+            
 <WeatherInfo data={weatherData}/> 
 <br/> 
 <WeatherForecast  city={weatherData.city} defaultCity={props.defaultCity} lat = {weatherData.latitude} lon={weatherData.longitude}/> 

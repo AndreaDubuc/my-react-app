@@ -23,10 +23,10 @@ const [unit, setUnit]= useState("celsius");
           <div className="col">
             <div className="row">
               <div className="col d-flex flex-row justify-content-end">
-                      <h1>
-                    <span id="temperature">{Math.round(props.celsius)}</span>
+                      <h1
+                    id="temperature">{Math.round(props.celsius)}
                 </h1>
-                   
+                
                   <div className="units my-auto">
           <span className="C" id="celsius-link">
             °C
@@ -38,8 +38,11 @@ const [unit, setUnit]= useState("celsius");
             </a>
           </span>
         </div>
+        
               </div>
+            
             </div>
+            
             <div className="row">
           <div>
           <WeatherIcon code={props.data}/>

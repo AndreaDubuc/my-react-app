@@ -14,9 +14,9 @@ export default function CurrentTime(props){
 
  return(
    <div className="CurrentTime">
-     <h6 id="time">
+     <small id="time">
        {hours}:{minutes}
-     </h6>
+     </small>
    </div>
  );
 }

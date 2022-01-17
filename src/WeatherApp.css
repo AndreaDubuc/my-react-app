@@ -14,19 +14,21 @@
 }
 
 #search_bar {
-  border: transparent;
-  margin-bottom: 0em;
-  margin-right: 40px;
-  margin-top: 0;
+ border:transparent
+ 
 }
-#search_icon {
-  background-color: transparent;
-  font-size: 25px;
-  margin-bottom: 0em;
-  margin-left: 50px;
-  margin-top: 0;
+
+#search-form{
+  top: 40px;
+}
+
+
+.search_icon {
+  background-color:transparent;
+  font-size: 23px;
   border: none;
 }
+
 
 hr {
   background: #000000;
