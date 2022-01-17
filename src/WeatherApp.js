@@ -78,13 +78,13 @@ function search(){
 <WeatherForecast  city={weatherData.city} defaultCity={props.defaultCity} lat = {weatherData.latitude} lon={weatherData.longitude}/> 
 </div>
 <small className="small">
-Coded by <a href="https://www.instagram.com/_andreacodes/" target="_blank" rel="noreferrer"> Andrea Dubuc </a> and is open source on {" "}
+Coded by <a href="https://www.instagram.com/_andreacodes/" target="_blank" rel="noopener noreferrer"> Andrea Dubuc </a> and is open source on {" "}
 
       <a href="https://github.com/AndreaDubuc/my-react-app"
-      target="_blank" rel="noreferrer">
-         GitHub
+      target="_blank" rel="noopener noreferrer">
+         GitHub  
         </a>
-2022
+{" "}2022
 
 </small>
 </div>
