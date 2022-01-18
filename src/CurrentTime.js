@@ -1,5 +1,5 @@
 import React from "react";
-import "./CurrentTime.scss";
+import "./CurrentTime.css";
 
 function CurrentTime(props){
  const now= new Date();

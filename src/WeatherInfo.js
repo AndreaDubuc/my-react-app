@@ -1,6 +1,6 @@
 import React from "react";
 import CurrentWeather from "./CurrentWeather";
-import "./WeatherInfo.scss";
+import "./WeatherInfo.css";
 
 export default function WeatherInfo(props){
      let now = new Date();
