@@ -1,5 +1,5 @@
 #city {
-  margin-top: 20px;
+  margin-top: -5px;
   font-size: 40px;
   font-weight: 700;
 }
@@ -16,15 +16,7 @@
   
 }
 
-#description::first-letter {
-  text-transform: capitalize;
-}
 
-
-h4 {
-  margin-bottom: 0px;
-  font-size: 15px;
-}
 
 
 
