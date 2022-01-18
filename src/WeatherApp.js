@@ -20,7 +20,7 @@ export default function WeatherApp(props) {
       icon:response.data.weather[0].icon,
       latitude:response.data.coord.lat,
       longitude:response.data.coord.lon,
-      description:response.data.weather[0].description
+      description:response.data.weather[0].description[0].toUpperCase()+ response.data.weather[0].description.substring(1)
     });
   }
 

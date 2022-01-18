@@ -39,28 +39,27 @@ export default function WeatherInfo(props){
       </h3>
       <CurrentWeather data={props.data} celsius={props.data.temperature} />
       <div className="row descriptions">
-        <div className="col-6">
-          <h3 id="description">{props.data.description}</h3>
+        
+          <h3 classNameid="description">{props.data.description}</h3>
         </div>
-        <div className="col-6">
-          <h3 id="max_min">
-            {props.data.min}°/{props.data.max}°
-          </h3>
-        </div>
-      </div>
+      
       <br />
-      <div className="row details" id="detail">
-        <div className="col-6" id="wind">
-          <h4>
+      <div className="d-flex flex-row justify-content-between" id="detail">
+        
+          <span>
             <strong>Wind:</strong> {props.data.wind} km/h
-          </h4>
-        </div>
-        <div className="col-6" id="humidity">
-          <h4>
+          </span>
+  
+      
+          <span id="max_min">
+            <strong>Max/Min:</strong> {props.data.max}°/{props.data.min}°
+          </span>
+        
+          <span>
             <strong>Humidity:</strong> {props.data.humidity}%
-          </h4>
-        </div>
-      </div>
+          </span>
     </div>
+    </div>
+
   );
 }
