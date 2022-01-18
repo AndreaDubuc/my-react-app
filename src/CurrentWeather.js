@@ -17,7 +17,6 @@ const [unit, setUnit]= useState("celsius");
     function fahrenheit(){
         return (props.celsius * 9) / 5 + 32;
     }
-  
     if (unit === "celsius"){
         return(
           <div className="col">

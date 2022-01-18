@@ -38,6 +38,7 @@ export default function WeatherInfo(props){
         {day}, {month} {date} 
       </h3>
       <CurrentWeather data={props.data} celsius={props.data.temperature} />
+      <br />
       <div className="row descriptions">
         
           <h3 classNameid="description">{props.data.description}</h3>
