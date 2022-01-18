@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, {useState} from "react";
 import WeatherForecast from "./WeatherForecast";
 import WeatherInfo from "./WeatherInfo";
 import "./WeatherApp.css";
