@@ -77,10 +77,10 @@ function search(){
 </div>
 <small className="small">
 
-      <a href="https://github.com/AndreaDubuc/my-react-app"
+      <a className="links" href="https://github.com/AndreaDubuc/my-react-app"
       target="_blank" rel="noopener noreferrer"> Open source code </a> {" "} by {""}
       
-      <a  href="https://www.instagram.com/_andreacodes/" target="_blank" rel="noopener noreferrer"> Andrea Dubuc </a>
+      <a className="links" href="https://www.instagram.com/_andreacodes/" target="_blank" rel="noopener noreferrer"> Andrea Dubuc </a>
           
 {" "}2022
 
