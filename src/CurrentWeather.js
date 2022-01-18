@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import "./CurrentWeather.css";
+import "./CurrentWeather.scss";
 import WeatherIcon from "./WeatherIcon";
 
 export default function CurrentWeather(props){
