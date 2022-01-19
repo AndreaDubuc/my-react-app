@@ -1,21 +1,9 @@
-h3 {
-  box-sizing: border-box;
-  font-size: 22px;
-  font-weight: 500;
-  margin-top: 40px;
-}
-hr {
-  background: #000000;
-  height: 3px;
-  border-width: 0px;
-  max-width: 600px;
-  margin: 10px auto;
-}
+
 .weather-forecast {
   margin-top: 20px;
   box-sizing: border-box;
-  color: #000;
-  font-size: 13px;
+  color: #fa86be;
+  font-size: 14px;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -27,4 +15,9 @@ hr {
   margin: 5px auto;
   height: 48px;
   width: 48px;
+}
+
+.line{
+  border: 1px solid #9aebed;
+  background-color: #9aebed;
 }

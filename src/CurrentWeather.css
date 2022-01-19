@@ -17,8 +17,10 @@ h1 {
 
 }
 
+
 a:link{
   text-decoration: none;
+  
 }
 
 .C,
@@ -26,11 +28,11 @@ a:link{
   transition: all 200ms ease-in-out;
   
 }
-
-.C:hover,
-.F:hover {
+.F:hover,
+.C:hover {
   cursor: pointer;
-  color: rgb(255, 0, 212);
+  color: #fa86be;
   font-weight: 700;
 }
+
 
