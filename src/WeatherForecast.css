@@ -10,11 +10,11 @@
 }
 
 
-.Forecast canvas {
+.ForecastInfo canvas {
   display: block;
   margin: 5px auto;
-  height: 48px;
-  width: 48px;
+  height: 25px;
+  width: 25px;
 }
 
 .line{
