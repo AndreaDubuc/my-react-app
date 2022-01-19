@@ -1,6 +1,6 @@
 
 .weather_app_wrapper {
-  max-width: 600px;
+  max-width: 500px;
   margin: 60px auto;
   text-align: center;
   
@@ -9,10 +9,11 @@
 .weather_app {
   display: block;
   margin: 0 auto;
-  width: 450px;
-  padding: 30px;
+  width: 400px;
+  height: 540px;
+  padding: 20px;
   border: 2px solid #9aebed;
-  border-radius: 45px;
+  border-radius: 40px;
   background-color:#fffcab;
 }
 
@@ -47,7 +48,7 @@ hr {
   height: 3px;
   border-width: 0px;
   max-width: 600px;
-  margin: 5px auto;
+  margin: -10px auto;
 }
 
 small {

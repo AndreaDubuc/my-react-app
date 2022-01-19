@@ -41,7 +41,7 @@ export default function WeatherInfo(props){
       <br />
       <div className="row descriptions">
         
-          <h3 classNameid="description">{props.data.description}</h3>
+          <h3 className="description">{props.data.description}</h3>
         </div>
       
       <br />
