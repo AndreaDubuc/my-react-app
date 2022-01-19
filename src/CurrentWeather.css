@@ -28,11 +28,15 @@ a:link{
   transition: all 200ms ease-in-out;
   
 }
-.F:hover,
-.C:hover {
-  cursor: pointer;
-  color: #fa86be;
-  font-weight: 700;
+.C.active,.F.active{
+  color: #a275e3;
 }
 
+.F.unactive,.C.unactive{
+color: #fa86be;
+}
 
+.F.unactive:hover,.C.unactive:hover{
+  font-weight: 700px;
+  color: #fa86be;
+}
